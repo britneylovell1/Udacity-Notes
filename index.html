@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title> Programming Notes </title>
+        <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Table of Contents -->
+    <div class="TOC">
+      <h1>Table of Contents</h1>
+      <ul>
+        <li><a href="#section-1">HTML and CSS Basics</a>
+        <li>
+          <ul>
+            <li><a href="#section-1-1">I. Components of the Web</a></li>
+            <li>
+              <ul>
+                <li><a href="#section-1-1-1">i. The Web</a></li>
+                <li><a href="#section-1-1-2">ii. HTML</a></li>
+                <li><a href="#section-1-1-3">iii. CSS Files</a></li>
+                <li><a href="#section-1-1-4">iv. Java Script Files</a></li>
+              </ul>
+            </li>
+            <li><a href="#section-1-2">II. The Process of Web Development</a></li>
+            <li>
+              <ul>
+                <li><a href="#section-1-2-1">i. Helpful Tools</a></li>
+                <li><a href="#section-1-2-2">ii. Outlining Your Web Page</a></li>
+                <li><a href="#section-1-2-3">iii. Adding Style</a></li>
+                <li><a href="#section-1-2-4">iv. The Box Model</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="#section-2">Working in Python</a>
+        <li>
+          <ul>
+            <li><a href="#section-2-1">I. Variables and Strings</a></li>
+            <li><a href="#section-2-2">II. Functions</a></li>
+            <li><a href="#section-2-3">III. Control Flow</a></li>
+            <li>
+              <ul>
+                <li><a href="#section-2-3-1">i. While Loops</a></li>
+                <li><a href="#section-2-3-2">ii. For Loops</a></li>
+                <li><a href="#section-2-3-3">iii. If Statements</a></li>
+              </ul>
+            </li>
+            <li><a href="#section-2-4">IV. Structured Data</a></li>
+            <li>
+              <ul>
+                <li><a href="#section-2-4-1">i. Lists</a></li>
+              </ul>
+            </li>
+            <li><a href="#section-2-5">V. Some Tips for Debugging</a></li>
+            <li><a href="#section-2-6">VI. Problem Solving Strategies</a></li>
+            <li><a href="#section-2-7">VII. Libraries and Files</a></li>
+          </ul>
+        </li>
+      </ul>
+    <!-- This is the lesson content -->
+    <div>
+      <!-- Section 1 -->
+      <h1 id="section-1"> HTML and CSS Basics </h1>
+      <div class="lesson">
+        <h2 id="section-1-1">I. Components of the Web</h2>
+        <div class="concept">
+          <h3 id="section-1-1-1">i. The Web</h3>
+          <p>
+              There are four major pieces to the World Wide Web. The
+              <em>internet</em> is a network of computers that communicate
+              to each other. When you want to access a website, your
+              computer communicates to other computers by sending a
+              <em>HTTP request</em> to their <em>server</em>. The correct
+              HTML document is sent back to your computer using the
+              <em>browser</em> to display it. 
+          </p>
+        </div>
+        <div class="concept">
+          <h3 id="section-1-1-2"> ii. HTML </h3>
+          <p>
+              HTML stands for Hypertext Markup Language. HTML documents are
+              what make up most of the internet. These documents are comprised
+              of text and tags that tells the browser how to project the text
+              to the user. It is often in the form &lt;tag attribute="value">.
+              HTML files determines the tree-like structure of the webpage.
+          </p>
+        </div>
+        <div class="concept">
+          <h3 id="section-1-1-3"> iii. CSS Files </h3>
+          <p>
+            CSS stands for Cascading Style Sheets. As the name suggests,
+            CSS Files determines the style of the webpage.
+            A CSS file is a separate document (labeled "insertnamehere.css")
+            and is found in the same folder as the HTML file that we want to
+            style. The CSS document is made up of selectors that refer to the
+            class name of the element that we want to style. The selector
+            tells the browser which element the rule (or declaration) inside
+            the curly braces applies to.
+          </p>
+          <pre>
+            selector {
+              property: value;
+            }
+          </pre>
+          <p>
+            For example,
+          </p>
+          <pre>
+            h1 {
+              background-color: black;
+              color: white;
+            }
+          </pre>
+          <p>
+            tells the browser that all h1 elements have a black background
+            and white text.
+          </p>
+        </div>
+        <div class="concept">
+          <h3 id="section-1-1-4"> iv. Java Script Files </h3>
+          <p>
+            Java Script Files determine the interactive components in a webpage.
+          </p>
+        </div>
+      </div>
+      <div class="lesson">
+        <h2 id="section-1-2"> II. The Process of Web Development </h2>
+        <div class="concept">
+          <h3 id="section-1-2-1"> i. Helpful Tools </h3>
+            <p>
+              These tools allow you to see how a certain webpage was constructed.
+              When using Google Chrome, click on tools > developer tools. This
+              allows you to look at code for the entire html page. You can also
+              click on an element on the webpage and press <b>control</b> >
+              Inspect Element to access code for that specific element.
+            </p>
+        </div>
+        <div class="concept">
+          <h3 id="section-1-2-2"> ii. Outlining Your Web Page </h3>
+            <p>
+              Start by placing "boxes" on your website grid. Decide where
+              you want your main ideas to be placed on your webpage. Create
+              div tags for each box (&lt;div>&lt;/div>). Give each box a
+              class name (&lt;div class=“title”>).
+            </p>
+        </div>
+        <div class="concept">
+          <h3 id="section-1-2-3"> iii. Adding Style </h3>
+          <p>
+            There are three options to adding style:
+          </p>
+          <ol>
+            <li> You can add style with the style tag in HTML in the head.
+              For example,
+              <pre>
+                &lt;head>
+                  &lt;style>
+                    div{
+                      color: blue
+                    }
+                  &lt;/style>
+                &lt;/head>
+              </pre> 
+              this tells the browser to make all text within div tags blue.
+            </li>
+            <li> You can use the style attribute in HTML. This is written
+              inline within the body of the HTML doc. For example, 
+              <pre>
+                &lt;body>
+                  &lt;div style="color : blue">This text would be blue.&lt;/div>
+                &lt;/body>
+              </pre>
+              this tells the browser to make the text within those specific div tags the color blue.
+            </li> 
+            <li> We can also add style by refering our HTML Document to a CSS
+              file in the same folder as our HTML doc. This is typically the
+              ideal way of creating style. Let this be an HTML document called
+              <em>main.html</em>. We will call the CSS document that we link
+              to, <em>main.css</em>.
+              <pre>
+                &lt;!DOCTYPE html>
+                  <em> This tells the browser the type of document </em>
+                &lt;html>
+                  <em> Everything between the html tags is in html </em>
+                  &lt;head>
+                    <em> This is where you add the style file. It often looks like this: </em>
+                    &lt;link rel="stylesheet" href="main.css" />
+                  &lt;/head>
+                  &lt;body>
+                    <em> This is where you put the html structure </em>
+                  &lt;/body>
+                &lt;/html>
+              </pre>
+              The CSS document will look like:
+              <pre>
+                div {
+                  background-color: red; 
+                }
+              </pre>
+            </li>
+          </ol>
+        </div>
+        <div class="concept">
+          <h3 id="section-1-2-4"> iv. The Box Model </h3>
+            <p>
+              Recall that HTML documents are made up of boxes. Each box has
+              4 components: content, padding, border, and margin. Sizing
+              becomes a bit of a challenge considering all four components.
+              We can approach this problem from two ways:
+            </p>
+            <ol>
+              <li>Set sizes in terms of percentages rather than pixels.</li>
+              <li>Set the box-sizing attribute to border-box for every element.
+                <br>*{box-sizing: border-box;}
+            </ol>
+            <p>
+              To reposition boxes, we need to resize them. Since divs are a block
+              element, they will take up the width of the entire page. Using the
+              rule "display: flex;" will allow the div boxes to appear next to
+              each other.
+            </p>
+        </div>
+      </div>
+      <div class="lesson">
+        <h2> You Can Do It Too! </h2>
+        <div class="concept">
+          <h4> If a cat can do it, so can you! Keep practicing! </h4>
+          <!-- I googled this image. It's so cute! -->
+          <img src="computer-cat.jpeg" alt="Computer cat is on a lunch break right meow.">
+        </div>
+      </div>
+    </div>
+      <!-- Section 2 -->
+      <h1 id="section-2"> Working in Python </h1>
+      <div class="lesson">
+        <h2 id="section-2-1"> I. Variables and Strings </h2>
+        <div class="concept">
+          <!-- I used some of the verbage for the definitions from the Udacity notes. -->
+          <p>
+            In computer science, <em>variables</em> represent values. A value,
+            or expression, is assigned to a variable name with an
+            <em>assignment statement</em>.
+          </p>
+          <pre>
+            &lt;variable name> = &lt;expression>
+          </pre>
+          <p>
+            It is important to note that "=" does not mean "equals to", rather
+            it is the operator that assigns the right side to the left side.
+          </p>
+          <p>
+            A <em>string</em> is a sequence of characters surrounded by double
+            or single quotes. Strings can be added, or <em>concatenated</em>,
+            and multiplied. If
+          </p>
+          <pre>
+            s = "Hello! "
+            t = "How are you?"
+          </pre>
+          <p>
+            Then,
+          </p>
+          <pre>
+            s + t = "Hello! How are you?"
+            s * 3 = "Hello! Hello! Hello! "
+          </pre>
+          <p>
+            We can also index strings, using the form
+            &lt;string>[&lt;starting expression> : &lt;ending expression>]. For
+            example, if
+          </p>
+          <pre>
+            s = "Computer Cat"
+          </pre>
+          <p>
+            Then,
+          </p>
+          <pre>
+            &lt;s>[0] = "C",
+            &lt;s>[1 + 1 : 10/2] = "mpu"
+          </pre>
+        </div>
+      </div>
+      <div class="lesson">
+        <h2 id="section-2-2"> II. Functions </h2>
+        <div class="concept">
+          <p>
+            We define a function as such:
+          </p>
+          <pre>
+            def &lt;function_name>(&lt;parameters>):
+              '''
+              function description
+              '''
+              &lt;block>
+              return &lt;expression>
+          </pre>
+          <p>
+            <em>Parameters</em> are passed through the function. The function
+            does some calculations on the parameters and spits back the output.
+            Defining a function is only the act of making a function. Calling a
+            function is the actual use of the function. We enter in the specific
+            parameters necessary for a program in place of the generalized
+            parameters we created when defining the function. The <em>return</em>
+            statement is what ends the function and spits back the output. If no
+            return statement is present, the function passes back
+            <code>'None'</code>. For example,
+          </p>
+          <pre>
+            def &lt;create_an_animal(animal_1,animal_2):
+              '''
+              Concatenate two animals.
+              Return new animal.
+              '''
+              new_animal = animal_1 + animal_2
+              return new_animal
+              
+            print create_an_animal('cat','llama')
+          </pre>
+          <p>
+            The result of running this program would be:
+          </p>
+          <pre>
+            catllama
+          </pre>
+        </div>
+      </div>
+      <div class="lesson">
+        <h2 id="section-2-3"> III. Control Flow </h2>
+        <div class="concept">
+          <h3 id="section-2-3-1"> i. While Loops </h3>
+            <p>
+              We define a <em>while loop</em> as such:
+            </p>
+            <pre>
+              while &lt;test_expression>:
+                &lt;block>
+            </pre>
+            <p>
+              If the test expression is True, then the block of code is executed
+              over and over, until the test expression is False. Sometimes a
+              <em>break statement</em> is needed to exit the while loop. 
+            </p>
+            <pre>
+              while &lt;test_expression>:
+                &lt;block>
+                if &lt;test_expression>:
+                  break
+                &lt;block>
+              &lt;after_while_loop>
+            </pre>
+        </div>
+        <div class="concept">
+          <h3 id="section-2-3-2"> ii. For Loops </h3>
+            <p>
+              We define a <em>for loop</em> as such:
+            </p>
+            <pre>
+              for &lt;name> in &lt;list>:
+                &lt;block>
+            </pre>
+            <p>
+              A <em>for loop</em> goes through each element in the list in
+              order and stops after executing the block of code for the last
+              element in the list.
+            </p>
+        </div>
+        <div class="concept">
+          <h3 id="section-2-3-3"> iii. If Statements </h3>
+            <p>
+              We define an <em>if statement</em> as such:
+            </p>
+            <pre>
+              if &lt;test_expression>:
+                &lt;block>
+            </pre>
+            <p>
+              If the test expression is true, then the block of code is executed.
+              If not, then the block of code is skipped over. To test multiple
+              cases, include <em>elif statements</em> and/or
+              <em>else statements.</em>
+            </p>
+            <pre>
+              if &lt;test_expression_1>:
+                &lt;block>
+              elif &lt;test_expression_2>:
+                &lt;block>
+              else: 
+                &lt;block>
+            </pre>
+            <p>
+              The test expression in the if statement always returns a Boolean
+              value - True or False. Sometimes operands - &lt; , >, ==, != - are
+              used to decide which Boolean value needs to be returned.
+            </p>
+            <p>
+              An <em>or statement</em> can also be used in the test expression.
+              We define an or statement as such:
+            </p>
+            <pre>
+              &lt;expression> or &lt;expression>
+            </pre>
+            <p>
+              If the first expression is True, then the second expression is not
+              evaluated. However, if the first expression if False, the second
+              expression is evaluated. It only takes one True expression in an
+              or statement to produce a True result. If both expressions are
+              False, then the or statement returns False.
+            </p>
+        </div>
+      </div>
+      <div class="lesson">
+        <h2 id="section-2-4"> IV. Structured Data </h2>
+        <div class="concept">
+          <h3 id="section-2-4-1"> i. Lists </h3>
+          <p>
+            We define a list as such:
+          </p>
+          <pre>
+            &lt;list_name> = [&lt;expression>, &lt;expression>, ...]
+          </pre>
+          <p>
+            Similar to strings, lists can be accessed using the index. The main
+            difference, however, between strings and lists is that a list is
+            <em>mutable</em>. Strings, themselves, do not change, but lists can!
+            For example, let's say
+          </p>
+          <pre>
+            some_string = 'hello world'
+          </pre>
+          <p>
+            Let's say that we decide to change <code>some_string</code> to a
+            different string. For instance,
+          </p>
+          <pre>
+            some_string = "good-bye y'all"
+          </pre>
+          <p>
+            The actual string, <code>'hello world'</code>, has not changed. It
+            is only the variable that it was assigned to has changed.
+            <code>'hello world'</code> is still in the computer memory. When we
+            reference <code>some_string</code>, it pulls up <code>"good-bye,
+            y'all"</code> instead of <code>'hello world'</code>. Let's say,
+          </p>
+          <pre>
+            some_list = ['a','b', 1 ,2]
+          </pre>
+          <p>
+            Let's say we want to add <code>'yes'</code> and <code>'no'</code>.
+            For instance,
+          </p>
+          <pre>
+            some_list = some_list + ['yes', 'no']
+          </pre>
+          <p>
+            Now <code>some_list</code> has changed. There is no such list
+            called <code>some_list</code> with <code>['a','b',1,2] </code> as
+            its elements anymore in the computer's memory. It has changed to
+            contain <code>['a','b',1 ,2 , 'yes', 'no']</code>. This becomes
+            important when we try to assign another variable to the new list
+            we've created. Let's say that <code>another_list</code> is also
+            assigned to <code>['a','b',1 ,2 , 'yes', 'no']</code>. Then,
+            <code>some_list</code> and <code>another_list</code> are equal to
+            each other. If we change one of the lists, then the other changes.
+            For example, if
+          </p>
+          <pre>
+            some_list[0] = 'uh-oh'
+          </pre>
+          <p>
+            Then <code>some_list = ['uh-oh','b',1 ,2 , 'yes', 'no']</code> and
+            <code>another_list = ['uh-oh','b',1 ,2 , 'yes', 'no']</code>.
+            Because the list, itself, has changed, then both the variables
+            assigned to the list are still equal to each other.
+          </p>
+          <p>
+            We can add or append elements to a list. Adding elements with '+'
+            simply adds each single element to the end of a list. Appending
+            elements perserves the structure of the elements being appended.
+            For example,
+          </p>
+          <pre>
+            print some_list + ['maybe', 'okay']
+            print some_list.append([3, 4])
+          </pre>
+          <p>
+            would yield this result:
+          </p>
+          <pre>
+            ['uh-oh','b',1 ,2 , 'yes', 'no', 'maybe', 'okay']
+            ['uh-oh','b',1 ,2 , 'yes', 'no', 'maybe', 'okay', [3,4]]
+          </pre>
+        </div>
+      </div>
+      <div class="lesson">
+        <h2 id="section-2-5"> V. Some Tips for Debugging </h2>
+        <div class="concept">
+          <ol>
+            <li>
+              Check the error message for details on the error and line
+              number.
+            </li>
+            <li>
+              When working with example code, make sure the code works.
+              Then make minor adjustments to fit your need.
+            </li>
+            <li>
+              Include print statements at important steps to check how the
+              code is executed.
+            </li>
+            <li>
+              Don't be quick to throw out code. Comment out the code that may
+              be causing the error. It may be useful later.
+            </li>
+            <li>
+              Create comments that are up to date and concise, but don't
+              comment obvious code. Be sure to include comments before
+              functions.
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="lesson">
+        <h2 id="section-2-6"> VI. Problem Solving Strategies </h2>
+        <div class="concept">
+          <ol>
+            <li>
+              Understand the inputs of the problem.
+            </li>
+            <li>
+              Understand the outputs of the problem.
+            </li>
+            <li>
+              Understand the procedure. Work out some examples!
+            </li>
+            <li>
+              Think about how to solve the problem in a humanly systematic
+              way. Write it as pseudocode. The simpler, the better!
+            </li>
+            <li>
+              Don't optimize prematurely.
+            </li>
+            <li>
+              Test code often and in small chunks.
+            </li>
+          </ol>
+        </div>
+      </div>
+      <!-- Possibly move to a different part of notes? Should I make these
+      officially section 3? Should I call it Object Oriented Programming? -->
+      <div class="lesson">
+        <h2 id="section-2-7">VII. Libraries, Files, and Classes</h2>
+        <div class="content">
+          <p>
+            The <em>Python Standard Libary</em> contains different
+            <em>files</em> filled with pre-made functions. We can think of the
+            Python Standard Library as a filing cabinet. Inside the filing
+            cabinet are a bunch of folders organized by content. Inside each
+            folder, or <em>file</em>, are related functions. To use these functions in a
+            python program, we need to access the file within the Python
+            Standard Library by importing it, as such:
+          </p>
+          <pre>
+            import webbrowser
+            
+            webbrowser.open("webpage_address")
+          </pre>
+          <p>
+            This program opens up a webpage by calling the function, <code>
+            open()</code>, which is found within the file, <code>
+            webbrowser</code>, inside the Python Standard Library. Not having
+            to see the actual code for the function <code>open()</code> is
+            called <em>abstraction</em> and allows us to focus on writing the
+            code we want without having to worry about every single detail. 
+            Go and explore more files and functions in the
+            <a href="https://docs.python.org/2.7/library/index.html">Python
+            Standard Library</a>!
+            The Python Standard Library also contains
+            <a href="https://docs.python.org/2.7/library/functions.html">
+            built-in functions</a> that don't require the importation of a file.
+          </p>
+        </div>
+      </div>
+      <div class="lesson">
+        <h2 id="section-2-8">VIII. Classes</h2>
+        <div class="concept">
+          <h3 id="section-2-8-1">i. What is a class?</h3>
+          <p>
+            A <em>class</em> is a set of instructions, like a blueprint,
+            found within a file. We can create distinct <em>objects</em>,
+            or <em>instances</em>, of a class using the instructions within the
+            class. As a blueprint for a house can present a house with yellow
+            walls and another house with blue walls, so a class can present
+            similiar but distinct objects.
+          </p>
+          <p>
+            Although the Python Standard Library has much to offer, there are
+            some packages that are available outside the PSL that we can
+            download. Twilio, for instance, is a package that sends text
+            messages. 
+          </p>
+          <pre>
+            from twilio import rest
+            
+            client = rest.TwilioRestClient(account_sid, auth_token)
+          </pre>
+          <p>
+            This is only a snippit of the actual code that allows us to send
+            text messages. In this code, <code>client</code> is an object of
+            the class, <code>TwilioRestClient</code>. This class is found
+            inside the file, <code>rest</code>, which is inside the file,
+            <code>twilio</code>. So this code says, "from the file called
+            <code>twilio</code>, import the file called <code>
+            rest</code> so that we can use the class, <code>
+            TwilioRestClient</code>." 
+          </p>
+        </div>
+        <div class="concept">
+          <h3>ii. Creating a Class</h3>
+          <p>
+            Let's create a python document called, <code>classDocument.py</code>
+            and within it, let's define a <em>class</em> as such:
+          </p>
+          <pre>
+            class ClassName():
+              &lt;statement-1>
+              &lt;statement-2>
+              ...
+              &lt;statement-N>
+          </pre>
+          <p>
+            A class contains statements, which can be both <em>class
+            variables</em> and <em>methods</em>. Class variables are just
+            variables defined with the class and methods are just functions
+            defined within the class. Commonly found within a class is the
+            class variable, <code>__doc__</code>, which provides information on
+            how the class works. This class variable is usually declared as
+            such:
+          </p>
+          <pre>
+            '''This is what the class does.'''
+          </pre>
+          <p>
+            When we call it in this way,
+          </p>
+          <pre>
+            classDocument.ClassName.__doc__
+          </pre>
+          <p>
+            the output will be <code>This is what the class does.</code>
+          </p>
+          <p>Also commonly found within a class is the
+            class <em>constructor</em>, also known as the <code>__init__</code>
+            function, and it is defined as such:
+          </p>
+          <pre>
+            def __init__(self, argument1, argument2, ..., argumentN):
+              self.name1 = argument1
+              self.name2 = argument2
+              ...
+              self.nameN = argumentN
+          </pre>
+          <p>
+            The instances created in defining the class, <code>
+            ClassName</code>, are defined in a separate python document, but
+            saved in the same directory as <code>classDocument.py</code>. We
+            create an instance as such:
+          </p>
+          <pre>
+            import classDocument
+            
+            instance_1 = classDocument.ClassName(argument1, argument2, ..., argumentN)
+          </pre>
+          <p>
+            All the variables associated with an instance is called <em>
+            instance variables</em>.
+          </p>
+        </div>
+        <div class="concept">
+          <h3>iii. Inheritance</h3>
+          <pre>
+            class ParentClass():
+              def __init__(self, argument1, argument2):
+                self.name1 = argument1
+                self.name2 = argument2
+            
+            class ChildClass(Parent):
+          </pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+The goal of the actual notes section is to make them look like handwritten notes.
+
+This is the website I got my webpage layout from:
+http://etrafficwebdesign.blogspot.com/2013/03/the-principal-of-layout-design-for.html
+
+This is what each section of notes will look like:
+https://www.ntchosting.com/encyclopedia/web-design/web-page-design/
+
+Yellow lined paper background from: http://www.freecreatives.com/backgrounds/lined-paper-background.html
+-->
+
