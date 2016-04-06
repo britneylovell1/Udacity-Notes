@@ -1,0 +1,72 @@
+/* This is a CSS comment */
+body {
+	padding: 20px 10px;
+	font-family: Georgia;
+	max-width: 2000px;
+	margin: 0 auto; /* The 0 refers to the top and bottom margins and the
+			 * "auto" automatically */
+	font-size: 1.4em;
+	background-image: url("notebook_paper.jpg");
+	background-repeat: repeat-y;
+	background-size: contain;
+	/* Look into changing the opacity of the background image */
+}
+
+
+h1 {
+	text-align: center;
+	/* color: #003333;*/
+}
+
+h2 {
+	margin: 10px;
+	text-align: left;
+}
+
+h3{
+	text-align: left;
+	margin: 10px;
+	padding-left: 50px;
+	/* color: #009999; */
+}
+
+p {
+	margin: 10px 0;
+	padding-left: 100px;
+}
+
+ul {
+	list-style-type: none; /* this removes the bullets that show up by
+			        * default in unordered lists */
+	padding: 0 0 0 1.6em;
+}
+
+ol {
+	padding-left: 120px;
+	
+}
+
+li {
+	font-size: 20px;
+}
+
+.lesson {
+	/* background-color:  #006666;*/
+	border-radius: 20px;
+	/* color: white; */
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.concept {
+	/* background-color: #ccffff; */
+	padding: 4px;
+	margin: 10px;
+	border-radius: 4px;
+	color: black;
+}
+
+.example {
+	font: courier;
+	size: 4;
+}
